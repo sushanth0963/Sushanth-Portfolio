@@ -66,6 +66,3 @@ def chat_with_ai(message):
         )
 
         return response.choices[0].message.content
-
-    except Exception as e:
-        return f"ERROR FROM GROQ: {str(e)}"

@@ -29,13 +29,3 @@ def chat(request: ChatRequest):
         return {"reply": reply}
     except Exception as e:
         return {"error": str(e)}
-    
-@app.get("/test")
-def test():
-    return {"status": "working"}
-
-@app.get("/test-groq")
-def test_groq():
-    return {
-        "result": chat_with_ai("hello")
-    }
