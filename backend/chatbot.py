@@ -56,12 +56,17 @@ Rules:
 """
 
 def chat_with_ai(message):
-    response = client.chat.completions.create(
-    model="llama-3.1-8b-instant",
-        messages=[
-            {"role": "system", "content": portfolio},
-            {"role": "user", "content": message}
-        ]
-    )
+    try:
+        response = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[
+                {"role": "system", "content": portfolio},
+                {"role": "user", "content": message}
+            ]
+        )
 
-    return response.choices[0].message.content
+        return response.choices[0].message.content
+
+    except Exception as e:
+        print(f"GROQ ERROR: {e}")
+        return f"GROQ ERROR: {e}"
