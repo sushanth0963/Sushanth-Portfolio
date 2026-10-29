@@ -20,9 +20,8 @@ class ChatRequest(BaseModel):
 @app.get("/")
 def home():
     return {
-        "message": "Portfolio AI Backend Running"
+        "message": "Portfolio AI Backend Running V2 TEST"
     }
-
 @app.post("/chat")
 def chat(request: ChatRequest):
     try:
