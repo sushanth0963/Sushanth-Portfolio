@@ -168,7 +168,7 @@ async function sendMessage(){
 
         const apiUrl = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
             ? "http://127.0.0.1:8000/chat"
-            : "https://portfolio-ai-2-y9r0.onrender.com/chat";
+            : "https://sushanth-portfolio.onrender.com/chat";
 
         const response = await fetch(apiUrl,{
             method:"POST",
