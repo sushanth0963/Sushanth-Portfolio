@@ -57,7 +57,7 @@ Rules:
 
 def chat_with_ai(message):
     response = client.chat.completions.create(
-    model="openai/gpt-oss-20b",
+    model="llama-3.1-8b-instant",
         messages=[
             {"role": "system", "content": portfolio},
             {"role": "user", "content": message}
