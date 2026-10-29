@@ -25,9 +25,8 @@ def home():
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-
-    reply = chat_with_ai(request.message)
-
-    return {
-        "reply": reply
-    }
+    try:
+        reply = chat_with_ai(request.message)
+        return {"reply": reply}
+    except Exception as e:
+        return {"error": str(e)}
