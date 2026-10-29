@@ -58,8 +58,13 @@ Rules:
 def chat_with_ai(message):
     try:
         response = client.chat.completions.create(
-            ...
+            model="openai/gpt-oss-20b",
+            messages=[
+                {"role": "system", "content": portfolio},
+                {"role": "user", "content": message}
+            ]
         )
+
         return response.choices[0].message.content
 
     except Exception as e:
